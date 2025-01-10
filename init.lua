@@ -614,7 +614,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         pyright = {},
         rust_analyzer = {},
@@ -624,7 +624,12 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        html = { filetypes = { 'html' }},
+        ts_ls = {},
+        cssls = {},
+        tailwindcss = {},
+        jsonls = {},
+        yamlls = {},
         --
 
         lua_ls = {
@@ -930,7 +935,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
